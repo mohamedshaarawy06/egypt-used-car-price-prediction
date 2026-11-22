@@ -5,3 +5,7 @@ backgroundColor = "#F5F7FB"
 secondaryBackgroundColor = "#E9EEF6"
 textColor = "#0B1F3A"
 font = "sans serif"
+
+[server]
+# Serve the car photos in static/ at app/static/...
+enableStaticServing = true

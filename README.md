@@ -103,6 +103,7 @@ After cleaning, **16,817** rows remain and are saved in `car_usage_clean.csv`.
 ├── app_pages/
 │   ├── home.py                  # Home page
 │   └── estimate.py              # Price estimate page
+├── static/                      # Car photos used on the site
 ├── .streamlit/config.toml       # Site theme colors
 ├── final_model.pkl              # Trained pipeline (preprocessing + CatBoost)
 ├── used_cars_in_egypt.csv       # Raw dataset

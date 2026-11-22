@@ -9,8 +9,9 @@ BASE_DIR = Path(__file__).parent
 # Median absolute % error of the final model on the test set (from the notebook)
 TEST_MDAPE = 0.1142
 
-HERO_IMAGE = "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1800&q=80&auto=format&fit=crop"
-BANNER_IMAGE = "https://images.unsplash.com/photo-1610809589386-9ea41901eb54?w=1800&q=80&auto=format&fit=crop"
+# Car photos (Unsplash) stored in static/ and served by Streamlit (enableStaticServing in .streamlit/config.toml)
+HERO_IMAGE = "app/static/hero.jpg"
+BANNER_IMAGE = "app/static/banner.jpg"
 
 
 @st.cache_data
