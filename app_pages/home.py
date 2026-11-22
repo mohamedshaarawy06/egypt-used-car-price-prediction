@@ -8,10 +8,13 @@ df = load_data()
 
 st.markdown(
     dedent(f"""
-    <div class="nv-hero" style="--hero-img: url('{HERO_IMAGE}');">
-        {logo_html()}
-        <h1>Know your car's real price in Egypt</h1>
-        <p>Data-driven price estimates for used cars, built on {len(df):,} real listings from the Egyptian market.</p>
+    <div class="nv-hero">
+        <img class="nv-bg" src="{HERO_IMAGE}" alt="">
+        <div class="nv-content">
+            {logo_html()}
+            <h1>Know your car's real price in Egypt</h1>
+            <p>Data-driven price estimates for used cars, built on {len(df):,} real listings from the Egyptian market.</p>
+        </div>
     </div>
     """),
     unsafe_allow_html=True,

@@ -12,10 +12,13 @@ labels = model_labels()
 
 st.markdown(
     dedent(f"""
-    <div class="nv-banner" style="--banner-img: url('{BANNER_IMAGE}');">
-        {logo_html()}
-        <h1>Estimate your car's price</h1>
-        <p>Fill in the car details, then press Estimate.</p>
+    <div class="nv-banner">
+        <img class="nv-bg" src="{BANNER_IMAGE}" alt="">
+        <div class="nv-content">
+            {logo_html()}
+            <h1>Estimate your car's price</h1>
+            <p>Fill in the car details, then press Estimate.</p>
+        </div>
     </div>
     """),
     unsafe_allow_html=True,

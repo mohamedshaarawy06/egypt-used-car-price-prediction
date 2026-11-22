@@ -54,34 +54,30 @@ CSS = """
 .nv-logo .nile {color: #FFFFFF;}
 .nv-logo .value {color: #F59E0B;}
 
+/* The car photo is a real <img> (not a CSS background) so dark-mode browser extensions don't hide it */
+.nv-hero, .nv-banner {position: relative; overflow: hidden; background-color: #0B1F3A;}
+.nv-hero .nv-bg, .nv-banner .nv-bg {position: absolute; right: 0; height: auto; max-width: none; z-index: 0;}
+.nv-hero::before, .nv-banner::before {content: ""; position: absolute; inset: 0; z-index: 1;}
+.nv-content {position: relative; z-index: 2;}
+
 .nv-hero {
     border-radius: 18px;
     padding: 3.2rem 3rem;
     color: #FFFFFF;
-    background-color: #0B1F3A;
-    background-image:
-        linear-gradient(90deg, #0B1F3A 0%, #0B1F3A 32%, rgba(11,31,58,0.55) 52%, rgba(11,31,58,0.05) 100%),
-        var(--hero-img);
-    background-repeat: no-repeat;
-    background-size: cover, 68% auto;
-    background-position: center, right center;
     min-height: 330px;
 }
+.nv-hero .nv-bg {width: 68%; top: 50%; transform: translateY(-50%);}
+.nv-hero::before {background: linear-gradient(90deg, #0B1F3A 0%, #0B1F3A 32%, rgba(11,31,58,0.55) 52%, rgba(11,31,58,0.05) 100%);}
 .nv-hero h1 {color: #FFFFFF; font-size: 2.6rem; line-height: 1.15; margin: 1.2rem 0 0.8rem 0; max-width: 560px;}
 .nv-hero p {color: #DCE4F2; font-size: 1.1rem; max-width: 520px; margin: 0;}
 
 .nv-banner {
     border-radius: 18px;
     padding: 2.2rem 2.5rem;
-    background-color: #0B1F3A;
-    /* Same layout as the home hero: text on navy at the left, the whole car visible at the right */
-    background-image:
-        linear-gradient(90deg, #0B1F3A 0%, #0B1F3A 40%, rgba(11,31,58,0.5) 58%, rgba(11,31,58,0) 75%),
-        var(--banner-img);
-    background-repeat: no-repeat;
-    background-size: cover, 60% auto;
-    background-position: center, right 38%;
 }
+/* Same layout as the home hero: text on navy at the left, the whole car visible at the right */
+.nv-banner .nv-bg {width: 60%; top: 38%; transform: translateY(-38%);}
+.nv-banner::before {background: linear-gradient(90deg, #0B1F3A 0%, #0B1F3A 40%, rgba(11,31,58,0.5) 58%, rgba(11,31,58,0) 75%);}
 .nv-banner h1 {color: #FFFFFF; font-size: 2rem; margin: 0.6rem 0 0.3rem 0;}
 .nv-banner p {color: #DCE4F2; margin: 0;}
 
@@ -140,20 +136,13 @@ CSS = """
 
 /* Phones and small tablets (kept last so it overrides the rules above) */
 @media (max-width: 768px) {
-    .nv-hero {
-        padding: 2rem 1.5rem;
-        min-height: 0;
-        background-image: linear-gradient(rgba(11,31,58,0.78), rgba(11,31,58,0.78)), var(--hero-img);
-        background-size: cover, cover;
-        background-position: center, center;
-    }
+    .nv-hero {padding: 2rem 1.5rem; min-height: 0;}
     .nv-hero h1 {font-size: 2rem;}
-    .nv-banner {
-        padding: 1.6rem 1.5rem;
-        background-image: linear-gradient(rgba(11,31,58,0.78), rgba(11,31,58,0.78)), var(--banner-img);
-        background-size: cover, cover;
-        background-position: center, center 45%;
-    }
+    .nv-banner {padding: 1.6rem 1.5rem;}
+    /* Photo fills the whole box behind the text, with a navy layer so the text stays readable */
+    .nv-hero .nv-bg, .nv-banner .nv-bg {width: 100%; height: 100%; top: 0; transform: none; object-fit: cover;}
+    .nv-banner .nv-bg {object-position: center 45%;}
+    .nv-hero::before, .nv-banner::before {background: rgba(11,31,58,0.78);}
     .nv-banner h1 {font-size: 1.6rem;}
     .nv-step {min-height: 215px;}
     .nv-result {padding: 1.4rem 1rem;}
