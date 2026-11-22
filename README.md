@@ -5,7 +5,9 @@ Predicting the asking price of used cars in the Egyptian market with a tuned **C
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E?logo=scikitlearn&logoColor=white)
 ![CatBoost](https://img.shields.io/badge/CatBoost-1.2-FFCC00)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?logo=streamlit&logoColor=white)](https://nilevalue.streamlit.app)
+
+🔗 **Live app:** [nilevalue.streamlit.app](https://nilevalue.streamlit.app)
 
 ---
 
@@ -147,7 +149,7 @@ jupyter notebook car_usage_prediction.ipynb
 
 ## 🖥️ The App
 
-**NileValue** is a two-page site:
+**NileValue** ([nilevalue.streamlit.app](https://nilevalue.streamlit.app)) is a two-page site:
 
 - **Home** – overview of the data and how it works
 - **Estimate Price** – choose **Brand → Model → Year → Fuel** (only combinations that exist in the data are shown), set transmission, color, kilometers and location, then press **Estimate** to get:
