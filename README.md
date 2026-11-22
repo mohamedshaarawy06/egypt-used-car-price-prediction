@@ -96,7 +96,12 @@ After cleaning, **16,817** rows remain and are saved in `car_usage_clean.csv`.
 ```
 .
 ├── car_usage_prediction.ipynb   # Full workflow: cleaning, EDA, modeling, evaluation
-├── car_app.py                   # Streamlit web app
+├── car_app.py                   # Streamlit web app (NileValue) – entry point & navigation
+├── nile_common.py               # Shared style, data/model loading
+├── app_pages/
+│   ├── home.py                  # Home page
+│   └── estimate.py              # Price estimate page
+├── .streamlit/config.toml       # Site theme colors
 ├── final_model.pkl              # Trained pipeline (preprocessing + CatBoost)
 ├── used_cars_in_egypt.csv       # Raw dataset
 ├── car_usage_clean.csv          # Cleaned dataset (used by the app)
@@ -142,9 +147,15 @@ jupyter notebook car_usage_prediction.ipynb
 
 ## 🖥️ The App
 
-- Choose **Brand → Model → Year → Fuel** from the sidebar (only combinations that exist in the data are shown)
-- Set transmission, color, kilometers and location
-- Press **Predict** to get the expected price in EGP
+**NileValue** is a two-page site:
+
+- **Home** – overview of the data and how it works
+- **Estimate Price** – choose **Brand → Model → Year → Fuel** (only combinations that exist in the data are shown), set transmission, color, kilometers and location, then press **Estimate** to get:
+  - the expected price in EGP with a typical range (± the model's test MdAPE, ~11%)
+  - real market prices (average / lowest / highest) for the same model and year
+  - the most similar cars in the data
+
+Photos are from [Unsplash](https://unsplash.com).
 
 ---
 
